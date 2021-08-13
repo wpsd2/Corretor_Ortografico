@@ -49,3 +49,10 @@ def normalizacao(lista_palavras):
 
 lista_normalizada = normalizacao(lista_palavras)
 print(lista_normalizada[:5])
+
+
+len(set(lista_normalizada))
+
+
+
+

@@ -35,5 +35,17 @@ print(separa_palavras(palavras_separadas))
 
 
 lista_tokens = nltk.tokenize.word_tokenize(artigos)
-lista_palavra = separa_palavras(lista_tokens)
+lista_palavras = separa_palavras(lista_tokens)
+print(f"O número de palavras é: {len(lista_palavras)}")
 
+print(lista_palavras[:5])
+
+
+def normalizacao(lista_palavras):
+    lista_normalizada = []
+    for palavra in lista_palavras:
+        lista_normalizada.append(palavra.lower())
+    return lista_normalizada
+
+lista_normalizada = normalizacao(lista_palavras)
+print(lista_normalizada[:5])

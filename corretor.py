@@ -54,5 +54,19 @@ print(lista_normalizada[:5])
 len(set(lista_normalizada))
 
 
+lista = "lgica"
+(lista[:1], lista[1:])
+palavra_exemplo = 'lgica'
 
 
+def gerador_palavra(palavra):
+    fatias = []
+    for i in range(len(palavra)+1):
+        fatias.append((lista[:i], lista[i:]))
+
+    print(fatias)
+    # palavras_geradas = insere_letras(fatias)
+    # return palavras_geradas
+
+
+gerador_palavra(palavra_exemplo)

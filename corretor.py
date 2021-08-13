@@ -59,14 +59,26 @@ lista = "lgica"
 palavra_exemplo = 'lgica'
 
 
-def gerador_palavra(palavra):
+
+
+
+palavra_exemplo = "lgica"
+
+def insere_letras(fatias):
+    novas_palavras = []
+    letras = 'abcdefghijklmnopqrstuvwxyzàáâãèéêìíîòóôõùúûç'
+    for E, D in fatias:
+        for letra in letras:
+            novas_palavras.append(E + letra + D)
+    return novas_palavras
+
+
+def gerador_palavras(palavra):
     fatias = []
     for i in range(len(palavra)+1):
-        fatias.append((lista[:i], lista[i:]))
+        fatias.append((lista[:i],lista[i:]))
+    palavras_geradas = insere_letras(fatias)
+    return palavras_geradas
 
-    print(fatias)
-    # palavras_geradas = insere_letras(fatias)
-    # return palavras_geradas
-
-
-gerador_palavra(palavra_exemplo)
+palavras_geradas = gerador_palavras(palavra_exemplo)
+print(palavras_geradas)

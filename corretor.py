@@ -36,3 +36,4 @@ print(separa_palavras(palavras_separadas))
 
 lista_tokens = nltk.tokenize.word_tokenize(artigos)
 lista_palavra = separa_palavras(lista_tokens)
+

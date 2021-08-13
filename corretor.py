@@ -76,9 +76,11 @@ def insere_letras(fatias):
 def gerador_palavras(palavra):
     fatias = []
     for i in range(len(palavra)+1):
-        fatias.append((lista[:i],lista[i:]))
+        fatias.append((palavra[:i], palavra[i:]))
     palavras_geradas = insere_letras(fatias)
     return palavras_geradas
 
 palavras_geradas = gerador_palavras(palavra_exemplo)
 print(palavras_geradas)
+
+

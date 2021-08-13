@@ -84,3 +84,23 @@ palavras_geradas = gerador_palavras(palavra_exemplo)
 print(palavras_geradas)
 
 
+def corretor(palavra):
+    palavras_geradas = gerador_palavras(palavra)
+    palavra_correta = max(palavras_geradas, key=probabilidade)
+    return palavra_correta
+
+
+frequencia = nltk.FreqDist(lista_normalizada)
+total_palavras = len(lista_normalizada)
+
+
+def probabilidade(palavra_gerada):
+    return frequencia[palavra_gerada]/total_palavras
+
+probabilidade("lógica")
+print(probabilidade("lógica"))
+
+
+
+corretor(palavra_exemplo)
+print(corretor(palavra_exemplo))

@@ -128,3 +128,14 @@ def avaliador (testes):
     print(f"{taxa_acerto}% de {numero_palavras} palavras")
 
 avaliador(lista_teste)
+
+
+
+def deletando_caracteres(fatias):
+    novas_palavras = []
+    for E, D in fatias:
+        novas_palavras.append(E + D[1:])
+    return novas_palavras
+
+
+gerador_palavras()

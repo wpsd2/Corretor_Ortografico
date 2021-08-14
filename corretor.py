@@ -138,4 +138,20 @@ def deletando_caracteres(fatias):
     return novas_palavras
 
 
-gerador_palavras()
+def gerador_palavras(palavra):
+    fatias = []
+    for i in range(len(palavra)+1):
+        fatias.append((palavra[:i],palavra[i:]))
+    palavras_geradas = insere_letras(fatias)
+    palavras_geradas += deletando_caracteres(fatias)
+    return palavras_geradas
+palavra_exemplo = "lóigica"
+palavras_geradas = gerador_palavras(palavra_exemplo)
+#print(palavras_geradas)
+
+avaliador(lista_teste)
+
+
+
+
+

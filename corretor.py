@@ -117,4 +117,14 @@ lista_teste = cria_dados_teste("palavras.txt")
 
 
 
+def avaliador (testes):
+    numero_palavras = len(testes)
+    acertou = 0
+    for correta, errada in testes:
+        palavra_corrigida = corretor(errada)
+        if palavra_corrigida == correta:
+            acertou += 1
+    taxa_acerto = round(acertou*100/numero_palavras, 2)
+    print(f"{taxa_acerto}% de {numero_palavras} palavras")
 
+avaliador(lista_teste)

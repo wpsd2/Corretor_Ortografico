@@ -221,3 +221,18 @@ def avaliador(testes, vocabulario):
 
 vocabulario = set(lista_normalizada)
 avaliador(lista_teste, vocabulario)
+
+
+palavra = "lóiigica"
+
+def gerador_turbinado(palavras_geradas):
+    novas_palavras = []
+    for palavra in palavras_geradas:
+        novas_palavras += gerador_palavras(palavra)
+    return novas_palavras
+
+palavras_g = gerador_turbinado(gerador_palavras(palavra))
+"lógica" in palavras_g
+#print(len(palavras_g))
+
+

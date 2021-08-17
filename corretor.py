@@ -127,7 +127,7 @@ def avaliador (testes):
     taxa_acerto = round(acertou*100/numero_palavras, 2)
     print(f"{taxa_acerto}% de {numero_palavras} palavras")
 
-avaliador(lista_teste)
+#avaliador(lista_teste)
 
 
 
@@ -149,7 +149,7 @@ palavra_exemplo = "lóigica"
 palavras_geradas = gerador_palavras(palavra_exemplo)
 # print(palavras_geradas)
 
-avaliador(lista_teste)
+#avaliador(lista_teste)
 
 
 def insere_letras(fatias):
@@ -197,9 +197,27 @@ def gerador_palavras(palavra):
 
 
 palavra_exemplo = "lgóica"
-palavras_geradas = gerador_palavras(palavra_exemplo)
+#palavras_geradas = gerador_palavras(palavra_exemplo)
 # print(palavras_geradas)
 
 
-avaliador(lista_teste)
+#avaliador(lista_teste)
 
+
+def avaliador(testes, vocabulario):
+    numero_palavras = len(testes)
+    acertou = 0
+    desconhecida = 0
+    for correta, errada in testes:
+        palavra_corrigida = corretor(errada)
+        if palavra_corrigida == correta:
+            acertou += 1
+        else:
+            desconhecida += (correta not in vocabulario)
+    taxa_acerto = round(acertou*100/numero_palavras, 2)
+    taxa_desconhecida = round(desconhecida*100/numero_palavras, 2)
+    print(f"{taxa_acerto}% de {numero_palavras} palavras, desconhecidas é {taxa_desconhecida}%")
+
+
+vocabulario = set(lista_normalizada)
+avaliador(lista_teste, vocabulario)

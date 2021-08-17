@@ -244,8 +244,9 @@ def novo_corretor(palavra):
     for palavra in todas_palavras:
         if palavra in vocabulario:
             candidatos.append(palavra)
-    print(len(candidatos))
     palavra_correta = max(candidatos, key=probabilidade)
     return palavra_correta
 
 print(novo_corretor(palavra))
+
+

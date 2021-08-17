@@ -236,3 +236,16 @@ palavras_g = gerador_turbinado(gerador_palavras(palavra))
 #print(len(palavras_g))
 
 
+def novo_corretor(palavra):
+    palavras_geradas = gerador_palavras(palavra)
+    palavras_turbinado = gerador_turbinado(palavras_geradas)
+    todas_palavras = set(palavras_geradas + palavras_turbinado)
+    candidatos = [palavra]
+    for palavra in todas_palavras:
+        if palavra in vocabulario:
+            candidatos.append(palavra)
+    print(len(candidatos))
+    palavra_correta = max(candidatos, key=probabilidade)
+    return palavra_correta
+
+print(novo_corretor(palavra))
